@@ -1,7 +1,7 @@
-# Homework 2 (30 Points)
+# Homework 2 (40 Points)
 
-The deadline for Homework 2 is Monday, October X, 8pm. The late
-submission deadline is Monday, October Y, 8pm.
+The deadline for Homework 2 is Monday, October 21, 8pm. The late
+submission deadline is Monday, October 28, 8pm.
 
 ## Getting the code template
 
@@ -102,7 +102,7 @@ build/mywc README.md -l
 ```
 should print
 ```bash
-XXX README.md
+205 README.md
 ```
 assuming `README.md` is this file.
 
@@ -135,10 +135,71 @@ and run it e.g. by calling
 build/mywc README.md -l
 ```
 
-## Part 3: Two's complement
+## Part 3: Two's Complement (8 Points)
 
-TODO
+Assume the datatype `int` is 32 bits long and uses a two's complement
+representation for signed values.  Right shifts are performed
+arithmetically for signed values and logically for unsigned values.
 
-## Part 4: IEEE Floating Point
+Given the following variable declarations:
 
-TODO
+```c
+int x = foo(); // Arbitrary value
+int y = bar(); // Arbitrary value
+
+unsigned ux = x;
+unsigned uy = y;
+```
+
+For each of the following C expressions, either (1) argue that it is
+true (evaluates to 1) for all values of `x` and `y`, or (2) give
+values for `x` and `y` for which it is false (evaluates to 0):
+
+1. ux > 0 || ux - 1 > 0
+1. y - 2 < 0 || y >= 2
+1. (x >> 31) == (ux >> 31)
+1. x + uy == ux + y
+1. 0 <= y * y
+1. -x == ~x * y + uy * ux
+
+In your analysis, you may assume that the values of `x` and `y` are
+always chosen such that no overflow happens on signed integer
+operations. Indicate for which of the expressions your answer would
+change if this assumption were dropped. Explain why.
+
+## Part 4: IEEE Floating Point (5 Points)
+
+Consider a 9-bit floating point representation based on the IEEE floating
+point format where
+
+* There is one sign bit.
+
+* There are k=5 exponent bits (i.e. the exponent bias is 15).
+
+* There are n=3 fraction bits.
+
+Decode the values represented by the following bit patterns.
+
+1. x = 0 10110 011
+2. y = 1 00111 010
+3. z = 0 00000 111
+4. u = 1 11100 000
+5. v = 0 10111 100
+
+Explain your decoding.
+
+Example:
+
+w = 1 01111 001 
+
+- Sign bit s is 1
+- Exponent indicates normalized form: 
+
+  exp = 1+2+4+8 = 15 => E = 15 - 15 = 0
+
+  frac = 1/8 => M = 1 + 1/8 = 9/8
+  
+- Hence
+  
+  w = (-1)^s M * 2^E = -1 * 9/8 * 2^0 = - 9/8
+  
