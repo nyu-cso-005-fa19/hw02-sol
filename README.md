@@ -78,9 +78,9 @@ int x = *((int*) &f);
 
 Write a C program that takes two command line arguments
 
-1. A path to a text file.
+1. A path to a text file, and
 
-2. One of `-c`, `-w`, `-l`.
+2. one of `-c`, `-w`, `-l`.
 
 Your program should then print:
 
@@ -94,11 +94,23 @@ Your program should then print:
   argument is `-l`.
 
 This value should be followed by a single space character (`' '`) and
-the given path to the text file. More specifically, the output of your
-program should be *identical* to the output produced by the `wc`
-command, given the same command line arguments (the output of your
-program is allowed to differ from the output of `wc` if the command
-line arguments are not as expected).
+the given path to the text file. For example, assuming that the
+executable of your program is `build/mywc`, then executing
+
+```bash
+build/mywc README.md -l
+```
+should print
+```bash
+XXX README.md
+```
+assuming `README.md` is this file.
+
+In general, the output of your program should be *identical* to the
+output produced by the `wc` command, given the same command line
+arguments (the output of your program is allowed to differ from the
+output of `wc` if the command line arguments are not as expected or
+some other error occurs).
 
 In the above specification, a word is a maximal sequence of characters
 that does not include a white space character. For simplicity, the
@@ -120,7 +132,7 @@ make build/mywc
 and run it e.g. by calling
 
 ```bash
-build/mywc README.md -c
+build/mywc README.md -l
 ```
 
 # Part 3: Two's complement
