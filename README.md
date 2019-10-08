@@ -20,7 +20,7 @@ Note that this may take a few minutes.
   ```git clone https://github.com/nyu-sco-005-fa19/hw02-<YOUR-GITHUB-USERNAME>.git```<br/>
   ```cd hw02```
 
-Put your answers to parts 7 and 8 into the text file `solution.md`.
+Put your answers to parts 3 and 4 into the text file `solution.md`.
 
 ## Submitting your solution
 
@@ -102,7 +102,7 @@ build/mywc -l README.md
 ```
 should print
 ```bash
-205 README.md
+206 README.md
 ```
 assuming `README.md` is this file.
 
@@ -193,6 +193,7 @@ Example:
 w = 1 01111 001 
 
 - Sign bit s is 1
+
 - Exponent indicates normalized form: 
 
   exp = 1+2+4+8 = 15 => E = 15 - 15 = 0
