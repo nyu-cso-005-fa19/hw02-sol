@@ -78,19 +78,19 @@ int x = *((int*) &f);
 
 Write a C program that takes two command line arguments
 
-1. A path to a text file, and
+1. One of `-c`, `-w`, `-l`, and
 
-2. one of `-c`, `-w`, `-l`.
+2. a path to a text file.
 
 Your program should then print:
 
-* the number of characters in the given text file, if the second
+* the number of characters in the given text file, if the first
   argument is `-c`,
   
-* the number of words in the given text file, if the second argument
+* the number of words in the given text file, if the first argument
   is `-w`, and
   
-* the number of newlines in the given text file, if the second
+* the number of newlines in the given text file, if the first
   argument is `-l`.
 
 This value should be followed by a single space character (`' '`) and
@@ -98,7 +98,7 @@ the given path to the text file. For example, assuming that the
 executable of your program is `build/mywc`, then executing
 
 ```bash
-build/mywc README.md -l
+build/mywc -l README.md
 ```
 should print
 ```bash
@@ -110,7 +110,7 @@ In general, the output of your program should be *identical* to the
 output produced by the `wc` command, given the same command line
 arguments (the output of your program is allowed to differ from the
 output of `wc` if the command line arguments are not as expected or
-some other error occurs).
+if some other user error occurs).
 
 In the above specification, a word is a maximal sequence of characters
 that does not include a white space character. For simplicity, the
@@ -132,7 +132,7 @@ make build/mywc
 and run it e.g. by calling
 
 ```bash
-build/mywc README.md -l
+build/mywc -l README.md
 ```
 
 ## Part 3: Two's Complement (8 Points)
