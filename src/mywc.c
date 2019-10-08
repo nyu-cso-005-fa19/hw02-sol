@@ -17,18 +17,18 @@ int parse_params(int argc, char** argv, int* mode, char** file_name) {
     return 0;
   }
 
-  if (*argv[2] != '-') return 0;
-  if (*(argv[2] + 1) == '\0') return 0;
-  if (*(argv[2] + 2) != '\0') return 0;
+  if (*argv[1] != '-') return 0;
+  if (*(argv[1] + 1) == '\0') return 0;
+  if (*(argv[1] + 2) != '\0') return 0;
 
-  switch (*(argv[2] + 1)) {
+  switch (*(argv[1] + 1)) {
   case 'c': *mode = CHAR; break;
   case 'w': *mode = WORD; break;
   case 'l': *mode = LINE; break;
   default: return 0;
   }
 
-  *file_name = argv[1];
+  *file_name = argv[2];
   
   return 1;
 }
