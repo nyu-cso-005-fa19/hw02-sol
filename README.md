@@ -135,10 +135,10 @@ and run it e.g. by calling
 build/mywc README.md -l
 ```
 
-# Part 3: Two's complement
+## Part 3: Two's complement
 
 TODO
 
-# Part 4: IEEE Floating Point
+## Part 4: IEEE Floating Point
 
 TODO
