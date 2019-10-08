@@ -129,7 +129,7 @@ running
 make build/mywc
 ```
 
-and run it e.g. by calling
+and run it, e.g., by calling
 
 ```bash
 build/mywc -l README.md
