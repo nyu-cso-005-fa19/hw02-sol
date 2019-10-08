@@ -61,6 +61,10 @@ int main(int argc, char** argv) {
   int in_word = 0;
   while (fgets(buf, sizeof(buf), file)) {
     for (int i = 0; buf[i] != '\0'; ++i) {
+      if (ccount + 1 < ccount) {
+        printf("Error: file too large.");
+        return -1;
+      }
       ccount++;
 
       switch (buf[i]) {
