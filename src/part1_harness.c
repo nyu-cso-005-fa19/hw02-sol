@@ -105,7 +105,7 @@ void test_scontains(unsigned int x, int i) {
   unsigned int res = scontains(x, i);
   unsigned int res_gold = scontains_gold(x, i);
   
-  panic_cond(res == res_gold,
+  panic_cond(!res == !res_gold,
              "test scontains(0x%x, %d):\n"
              "            x in binary: "
              BYTE_TO_BINARY_PATTERN" "
