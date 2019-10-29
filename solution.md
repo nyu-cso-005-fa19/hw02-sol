@@ -9,17 +9,17 @@
    y = INT_MIN).
    
 3. Only true if the most significant bit of x and ux is 0. Otherwise,
-   the result will be different because x >> 31 performs arithmetic
-   shift and ux >> 31 logical shift. Example: pick x = -1.
+   the result of the two sides will differ because x >> 31 performs
+   arithmetic shift and ux >> 31 logical shift. Example: pick x = -1.
    
 4. Always true because both x + uy and ux + y involve a mix of signed
    and unsigned int. The value of x will be implicitly converted to
    unsigned in x + uy, yielding the same result as ux + uy. Similarly
    y will be converted to unsigned in ux + y.
    
-5. Always true because the square of the integers is always
+5. Always true because the square of an integer is always
    positive. However, this no longer holds true if there is signed
-   overflow. If y is sufficiently large, than y * y can be negative.
+   overflow. If y is sufficiently large, then y * y can be negative.
    
 6. Not always true. Example: pick x = 1 and y = 0.
 
@@ -52,19 +52,19 @@
    
      E = 1 - 15 = -14
      
-     frac = 1/2 + 1/4 + 1/8 = 13/8
+     frac = 1/2 + 1/4 + 1/8 = 7/8
      
-   * Hence: z = 13/8 * 2^(-14)
+   * Hence: z = 7/8 * 2^(-14)
    
 4. * sign bit is 1 => u negative
 
    * exp != 0 => normalized form
    
-     exp = 4 + 8 + 16 = 26 => E = 26 - 15 = 11
+     exp = 4 + 8 + 16 = 28 => E = 28 - 15 = 13
      
      frac = 1
      
-   * Hence: u = - 2^11
+   * Hence: u = - 2^13
    
 5. * sign bit is 0 => v is positive
 
