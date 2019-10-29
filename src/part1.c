@@ -7,10 +7,6 @@
 // 3 Points
 int convert_endian(int x)
 {
-  // TOOD: Replace the following with your code
-  //assert(0);
-  //return 0;
-
   int res;
 
   for (int i = 0; i < sizeof(int); i++) {
@@ -26,9 +22,6 @@ int convert_endian(int x)
 // 3 Points
 unsigned char get_exponent_field(float f) 
 {
-  //TODO: Replace the following with your code
-  //assert(0);
-  //return 0;
   unsigned int b = *((unsigned int*) &f) << 1;
   return *((unsigned char*) &b + 3);
 }
@@ -44,17 +37,12 @@ unsigned char get_exponent_field(float f)
 // Return the empty set
 // 1 Point
 unsigned int sempty() {
-  //TODO: Replace the following with your code
-  //assert(0);
   return 0;
 }
 
 // Return true iff the set represented by x contains i.
 // 2 Points
 int scontains(unsigned int x, int i) {
-  //TODO: Replace the following with your code
-  //assert(0);
-  //return 0;
   if (i < 0 || i >= sizeof(int)*8) return 0;
   else return x & 1 << i;
 }
@@ -63,35 +51,24 @@ int scontains(unsigned int x, int i) {
 // 2 Points
 unsigned int sinsert(unsigned int x, int i) {
   assert (0 <= i && i < sizeof(int)*8);
-  //TODO: Replace the following with your code
-  //assert(0);
-  //return 0;
   return x | 1 << i;
 }
 
 // Return the set obtained by removing integer i from the set represented by x.
 // 2 Points
 unsigned int sdelete(unsigned int x, int i) {
-  //TODO: Replace the following with your code
-  //assert(0);
-  //return 0;
+  assert (0 <= i && i < sizeof(int)*8);
   return x & ~(1 << i);
 }
 
 // Return the set obtained by taking the union of the sets represented by x and y.
 // 2 Points
 unsigned int sunion(unsigned int x, unsigned int y) {
-  //TODO: Replace the following with your code
-  //assert(0);
-  //return 0;
   return x | y;
 }
   
 // Return the set obtained by taking the intersection of the sets represented by x and y.
 // 2 Points
 unsigned int sinter(unsigned int x, unsigned int y) {
-  //TODO: Replace the following with your code
-  //assert(0);
-  //return 0;
   return x & y;
 }
